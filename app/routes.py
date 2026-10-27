@@ -43,13 +43,13 @@ def create_link():
 
     original_url = data.get("original_url")
     custom_alias = data.get("custom_alias")
-    expires_at_str = data.get("expires_at")  # optional, ISO 8601
+    expires_at_str = data.get("expires_at")  
 
-    # 1. Validate URL
+  
     if not is_valid_url(original_url):
         return error(400, "Invalid URL. Must be a valid http/https URL.")
 
-    # 2. Validate alias (optional)
+    
     if custom_alias is not None and not is_valid_alias(custom_alias):
         return error(
             400,
